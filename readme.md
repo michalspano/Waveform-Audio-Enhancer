@@ -14,7 +14,7 @@ With this nifty tool, you can easily alter audio sample levels in your **.wav** 
 
 3. Running the core enhancement module `*`
 
-```# ./core #INPUT_PATH #OUTPUT_PATH $ENHANCE_FACTOR ```
+```# ./core $INPUT_PATH $OUTPUT_PATH $ENHANCE_FACTOR ```
 
 ___
 
