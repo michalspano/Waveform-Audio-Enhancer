@@ -66,7 +66,7 @@ int main (int argc, char *argv[])
 void enhanceAudio(FILE *input, FILE *output, float f)
 {
     // Prompt the user
-    printf("Working on the task...\n");
+    printf("\nWorking on the task...\n");
 
     BYTE header[HEADER];
     fread(header, HEADER, 1, input);
