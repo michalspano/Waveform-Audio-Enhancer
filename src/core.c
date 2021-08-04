@@ -10,6 +10,9 @@
 // Ref.: https://docs.fileformat.com/audio/wav/
 #define HEADER 44
 
+// Define credentials path
+#define CREDS "src/credentials.txt"
+
 // Define const of 8 bites / 1 byte
 typedef uint8_t BYTE;
 
@@ -18,6 +21,7 @@ typedef int16_t DOUBLE_BYTE;
 
 // Prototypes
 void enhanceAudio(FILE *input, FILE *output, float f);
+void credentials(char *path);
 
 // Take 3 command line arguments
 int main (int argc, char *argv[])
@@ -28,6 +32,8 @@ int main (int argc, char *argv[])
         printf("%s\n", USAGE_ERROR);
         return 1;
     }
+    // Invoke the credentials function
+    credentials(CREDS);
 
     // Specify file paths
     char *inputPath = argv[1], *outputPath = argv[2];
@@ -51,10 +57,17 @@ int main (int argc, char *argv[])
     // Close files
     fclose(inputFile);
     fclose(outputFile);
+
+    // Completion prompt messages
+    printf("Your task was completed!\n");
+    printf("Path: %s\n", outputPath);
 }
 
 void enhanceAudio(FILE *input, FILE *output, float f)
 {
+    // Prompt the user
+    printf("Working on the task...\n");
+
     BYTE header[HEADER];
     fread(header, HEADER, 1, input);
     fwrite(header, HEADER, 1, output);
@@ -69,4 +82,19 @@ void enhanceAudio(FILE *input, FILE *output, float f)
         // Write new sample level to the output file
         fwrite(&volume, sizeof(DOUBLE_BYTE), 1, output);
     }
+}
+void credentials(char *path)
+{
+    // Create a byte buffer
+    BYTE buffer;
+    FILE *creds = fopen(path, "r");
+
+    while (fread(&buffer, sizeof(BYTE), 1, creds))
+    {
+        // Receive bytes in int and convert to char
+        char c_chr = (char) buffer;
+        printf("%c", c_chr);
+    }
+    // Close the creds file
+    fclose(creds);
 }
