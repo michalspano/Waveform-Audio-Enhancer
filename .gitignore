@@ -5,6 +5,7 @@
 
 # Exclude test modules
 /test
+output.wav
 
 ## Default C .gitignore
 
