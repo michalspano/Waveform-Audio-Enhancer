@@ -6,15 +6,21 @@ With this nifty tool, you can easily alter audio sample levels in your **.wav** 
 
 1. Cloning the remote repositery
 
-``` # git clone https://github.com/michalspano/Waveform-Audio-Enhancer.git ```
+```Bash
+# git clone https://github.com/michalspano/Waveform-Audio-Enhancer.git 
+```
 
 2. Accessing the remote repositery
 
-```# cd Waveform-Audio-Enhancer ```
+```Bash
+# cd Waveform-Audio-Enhancer 
+```
 
 3. Running the core enhancement module `*`
 
-```# ./core $INPUT_PATH $OUTPUT_PATH $ENHANCE_FACTOR ```
+```Bash
+# ./core $INPUT_PATH $OUTPUT_PATH $ENHANCE_FACTOR 
+```
 
 ___
 
