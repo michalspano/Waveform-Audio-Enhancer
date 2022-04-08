@@ -1,0 +1,5 @@
+#!/bin/bash
+NAME="enhance"
+
+# Copy the binary to /usr/local/bin
+sudo cp ./bin/${NAME} /usr/local/bin/${NAME}; printf 'The installation of `%s` has been completed.\n' "${NAME}"
